@@ -30,4 +30,4 @@ endif
 	$(CC) src/rkld.c -o build/rkld.so -fPIC -shared -ldl -D_GNU_SOURCE
 	@xxd -i build/rkld.so > build/rkld.h
 	@sed -i'.bk' 's/build_//g' build/rkld.h
-	$(CC) src/rkload.c -o ./bin/rkload -static
+	$(CC) src/rkload.c -o ./bin/rkload -static -I .
