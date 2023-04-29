@@ -12,13 +12,13 @@ Medusa is a powerful, stealthy, verastile, and, modular rootkit designed to give
 - **PAM Backdoor**
 &rarr; Hook libpam authentication system calls for persisting with a hidden root user
 - **Process Hiding**
-&rarr; 				Hide it's self from process memory map
+&rarr; 				Hooks rootkit can intercept the 'kill' function to prevent the user from terminating the rootkit process. By hiding itself from the system, the rootkit can remain undetected and achieve persistence on the system.
 - **File Hiding**
-&rarr; 				Hide it's self from process memory map
+&rarr; 				Hooks 'stat' and 'readdir' to hide files and directories.
 - **Network Hiding**
-&rarr; 				Hide it's self from process memory map
+&rarr; 				Hooks the 'getaddrinfo' function to filter out addresses of remote hosts that it wants to hide. By using these techniques, the rootkit can effectively hide network activity from the user and other programs.
 - **Anti-Debugging**
-&rarr; 				Hide it's self from process memory map
+&rarr; 				Also Hooks 'kill' system call can be intercepted to prevent the debugger from sending signals to the rootkit process. By evading debugging, the rootkit can make it more difficult for security researchers to discover and analyze its behavior.
 - **Auth Logging**
 &rarr; 				Hooks `pam_prompt()`, `pam_vprompt` and `pam_syslog` to log all successful authentications locally, or    remotely via SSH to Medusa home directory
 - **Execution Logging**
